@@ -1,10 +1,10 @@
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'com.gradleup.shadow' version '8.3.5'
 }
 
 group = 'me.chrommob'
-version = '1.4.1'
+version = '1.4.3'
 
 repositories {
     mavenCentral()
@@ -20,7 +20,14 @@ repositories {
         url = "https://oss.sonatype.org/content/groups/public/"
     }
     maven {
+        name = "sonatype-oss-snapshots1"
+        url = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+    }
+    maven {
         url 'https://repo.codemc.io/repository/maven-releases/'
+    }
+    maven {
+        url 'https://repo.codemc.io/repository/maven-snapshots/'
     }
     maven {
         name = "aikar-repo"
@@ -29,14 +36,14 @@ repositories {
 }
 
 dependencies {
-    compileOnly('org.geysermc.floodgate:api:2.2.2-SNAPSHOT')
+    compileOnly "org.geysermc.floodgate:api:2.2.3-SNAPSHOT"
     compileOnly "org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT"
-    implementation "net.kyori:adventure-text-minimessage:4.14.0"
-    implementation "net.kyori:adventure-platform-bukkit:4.2.0"
-    implementation 'com.github.retrooper:packetevents-spigot:2.6.0'
-    implementation 'org.bstats:bstats-bukkit:3.0.2'
-    implementation  "co.aikar:acf-paper:0.5.1-SNAPSHOT"
-    implementation "net.kyori:adventure-text-serializer-plain:4.17.0"
+    implementation "net.kyori:adventure-text-minimessage:4.18.0-SNAPSHOT"
+    implementation "net.kyori:adventure-platform-bukkit:4.3.5-SNAPSHOT"
+    implementation "com.github.retrooper:packetevents-spigot:2.7.1-SNAPSHOT"
+    implementation "org.bstats:bstats-bukkit:3.1.0"
+    implementation "co.aikar:acf-paper:0.5.1-SNAPSHOT"
+    implementation "net.kyori:adventure-text-serializer-plain:4.18.0-SNAPSHOT"
 
 }
 

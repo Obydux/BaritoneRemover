@@ -75,9 +75,9 @@ public abstract class Check {
                 .replaceText(TextReplacementConfig.builder().matchLiteral("{vl}").replacement(String.valueOf(currentVl)).build())
                 .replaceText(TextReplacementConfig.builder().matchLiteral("{punish-vl}").replacement(String.valueOf(punishVl)).build())
                 .hoverEvent(Component.text(description).color(NamedTextColor.AQUA));
-        ConfigManager.getInstance().adventure().permission("br.alert").sendMessage(message);
         String messageString = PlainTextComponentSerializer.plainText().serialize(message);
         ConfigManager.getInstance().appendDebug(messageString);
+        ConfigManager.getInstance().adventure().permission("br.alert").sendMessage(message);
         String json = "{\"content\": \"Player " + playerName + " has been flagged for " + name + " (" + identifier + ") (VL: " + currentVl + "/" + punishVl + ")\"}";
         ConfigManager.getInstance().sender().add(json, playerName,currentVl >= punishVl);
     }
